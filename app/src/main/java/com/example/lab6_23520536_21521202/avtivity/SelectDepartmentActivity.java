@@ -1,9 +1,9 @@
 package com.example.lab6_23520536_21521202.avtivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import com.example.lab6_23520536_21521202.R;
 
@@ -23,14 +23,18 @@ public class SelectDepartmentActivity extends AppCompatActivity {
         // Nút quay lại
         btnBack.setOnClickListener(v -> finish());
 
-        // Bấm chọn Chấn thương chỉnh hình
-        cardChanThuong.setOnClickListener(v -> {
-            android.content.Intent intent = new android.content.Intent(SelectDepartmentActivity.this, SelectDateTimeActivity.class);
-            startActivity(intent);
-        });
+        // Gắn sự kiện: Bấm vào khoa nào thì truyền tên khoa đó qua hàm navigateToNextScreen
+        cardKhoaNoi.setOnClickListener(v -> navigateToNextScreen("Khoa Nội"));
+        cardKhoaNgoai.setOnClickListener(v -> navigateToNextScreen("Khoa Ngoại"));
+        cardChanThuong.setOnClickListener(v -> navigateToNextScreen("Chấn thương chỉnh hình"));
+        cardUngBuou.setOnClickListener(v -> navigateToNextScreen("Ung bướu"));
+    }
 
-        cardKhoaNoi.setOnClickListener(v -> Toast.makeText(this, "Bạn chọn Khoa Nội", Toast.LENGTH_SHORT).show());
-        cardKhoaNgoai.setOnClickListener(v -> Toast.makeText(this, "Bạn chọn Khoa Ngoại", Toast.LENGTH_SHORT).show());
-        cardUngBuou.setOnClickListener(v -> Toast.makeText(this, "Bạn chọn Ung bướu", Toast.LENGTH_SHORT).show());
+    // Hàm nhận tên khoa và đóng gói vào Intent để gửi sang màn hình tiếp theo
+    private void navigateToNextScreen(String deptName) {
+        Intent intent = new Intent(SelectDepartmentActivity.this, SelectDateTimeActivity.class);
+        // Đóng gói tên khoa vào để trang sau nhận được
+        intent.putExtra("DEPARTMENT_KEY", deptName);
+        startActivity(intent);
     }
 }
