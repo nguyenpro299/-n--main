@@ -3,104 +3,116 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F5F5F5">
+    android:background="#F0F2F5"
+    android:fillViewport="true">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:paddingBottom="80dp">
 
-        <LinearLayout
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:padding="16dp"
-            android:orientation="horizontal"
-            android:gravity="center_vertical">
-
-            <ImageView
-                android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:src="@mipmap/ic_launcher" />
+            android:layout_margin="16dp"
+            app:cardCornerRadius="12dp"
+            app:cardElevation="4dp">
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:layout_marginStart="12dp"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:orientation="horizontal"
+                android:padding="16dp"
+                android:gravity="center_vertical">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:text="Bệnh viện Quận Y 175"
-                    android:textColor="#388E3C"
-                    android:textSize="18sp"
-                    android:textStyle="bold" />
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Số 786 Nguyễn Kiệm, Phường 3, Gò Vấp, TP.HCM"
-                    android:textSize="12sp"
-                    android:textColor="#666666" />
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:orientation="vertical">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Bệnh viện Quận Y 175"
+                        android:textColor="#2E7D32"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Số 786 Nguyễn Kiệm, Gò Vấp, TP.HCM"
+                        android:textSize="12sp"
+                        android:textColor="#757575" />
+                </LinearLayout>
             </LinearLayout>
-        </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="180dp"
-            android:src="@drawable/anh_benh_vien_175"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:layout_marginHorizontal="16dp"
+            android:background="@drawable/rounded_corner_bg"
+            android:src="@drawable/anh_benh_vien_175" />
 
         <GridLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:columnCount="3"
+            android:layout_margin="16dp"
             android:padding="8dp"
-            android:background="@color/white">
+            android:background="@android:color/white">
 
-            <LinearLayout android:id="@+id/btn_ho_tro_kham" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎧" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hỗ trợ\nđặt khám" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_ho_tro_kham" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🎧" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hỗ trợ" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_lich_su" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💳" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lịch sử\nthanh toán" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_lich_su" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="💳" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Thanh toán" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_tra_cuu_hoa_don" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🧾" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tra cứu\nhoá đơn" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_tra_cuu_hoa_don" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🧾" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hoá đơn" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_tra_cuu_kq" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔍" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tra cứu KQ\nkhám bệnh" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_tra_cuu_kq" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🔍" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="KQ Khám" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_quet_qr" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📱" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Quét mã\nQR" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_quet_qr" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📱" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Quét QR" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_lich_su_hien_mau" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🩸" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Lịch sử\nhiến máu" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_lich_su_hien_mau" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🩸" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hiến máu" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_ho_so" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📁" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hồ Sơ\nCá Nhân" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_ho_so" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="📁" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Hồ Sơ" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_tra_cuu_ban_do" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🗺️" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Tra cứu\nbản đồ" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_tra_cuu_ban_do" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="🗺️" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Bản đồ" android:textSize="12sp"/>
             </LinearLayout>
 
-            <LinearLayout android:id="@+id/btn_cai_dat" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_columnWeight="1" android:orientation="vertical" android:padding="12dp" android:gravity="center" android:clickable="true" android:foreground="?attr/selectableItemBackground">
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚙️" android:textSize="36sp"/>
-                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cài đặt\nHệ thống" android:textSize="13sp" android:textAlignment="center" android:layout_marginTop="8dp" android:textColor="#333333"/>
+            <LinearLayout android:id="@+id/btn_cai_dat" style="@style/GridItemStyle">
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="⚙️" android:textSize="30sp"/>
+                <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Cài đặt" android:textSize="12sp"/>
             </LinearLayout>
         </GridLayout>
 
@@ -109,9 +121,11 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_margin="16dp"
-            android:text="ĐẶT KHÁM"
+            android:text="ĐẶT KHÁM NGAY"
             android:textSize="18sp"
-            android:backgroundTint="#388E3C"
-            app:cornerRadius="8dp"/>
+            android:textStyle="bold"
+            app:cornerRadius="12dp"
+            android:backgroundTint="#2E7D32"/>
+
     </LinearLayout>
 </ScrollView>
